@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header><h1>HTML Form</h1></header>
+    <div id="main">
+        <div id="main-heading"><h2>Fill up the form</h2></div>
+        <div id="main-form">
+            <form action="www.gmail.com">
+                <input type="text" name="" id="inp-name" placeholder="Enter Your Name" required>
+                <input type="email" name="" id="inp-email" placeholder="EnterYour Email" required>
+                <input type="number" name="" id="inp-age" placeholder="Enter Your Age" required max="100" min="18">
+                <input type="radio" name="gender" id="male" class="radio"><label for="male">Male</label>
+                <input type="radio" name="gender" id="female" class="radio">
+                <label for="female">Female</label>
+                <label for="country">Select country</label>
+                <select name="" id="country">
+                    <option value="india">India</option>
+                    <option value="pakistan">Pakistan</option>
+                    <option value="sri-lanka">Sri Lanka</option>
+                    <option value="bangladesh">Bangladesh</option>
+                    <option value="nepal">Nepal</option>
+                </select>
+                <input type="checkbox" name="" id="chkbox">
+                <label for="chkbox">Subscribe to Newsletter</label>
+                <input type="text" name="" id="cmmnts">
+                <label for="cmmnts">Comments</label>
+                <button id="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
