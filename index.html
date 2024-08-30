@@ -33,7 +33,8 @@
                 <button id="submit">Submit</button>
             </form>
         </div>
-
+        <div id="box1"></div>
+        <div id="box2"></div>
     </div>
 </body>
 <script>
@@ -42,12 +43,12 @@
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const name = document.getElementById("inp-name").value.trim();
-        const email = document.getElementById("inp-email").value.trim();
-        const age = document.getElementById("inp-age").value.trim();
+        const name = document.getElementById("inp-name").value;
+        const email = document.getElementById("inp-email").value;
+        const age = document.getElementById("inp-age").value;
         const country = document.getElementById("country").value;
         const subscribe = document.getElementById("chkbox").checked;
-        const comments = document.getElementById("cmmnts").value.trim();
+        const comments = document.getElementById("cmmnts").value;
 
         if (name === "") {
             alert("Please enter your name");
@@ -74,15 +75,10 @@
             return;
         }
 
-        // If all fields are filled in, you can submit the form
-        // or do something else with the data
-        console.log("Form submitted with data:");
-        console.log("Name:", name);
-        console.log("Email:", email);
-        console.log("Age:", age);
-        console.log("Country:", country);
-        console.log("Subscribe:", subscribe);
-        console.log("Comments:", comments);
+        
+        
+        document.getElementById("box1").innerHTML = "Form submitted with data: <br>" + "Name: " + name + "<br>" + "Email: " + email + "<br>" + "Age: " + age + "<br>" + "Country: " + country + "<br>" + "Subscribe: " + subscribe + "<br>" +
+  "Comments: " + comments;
     });
 </script>
 </html>
