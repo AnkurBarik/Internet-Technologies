@@ -1,84 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Form</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Interactive Web Application</title>
+    <link rel="stylesheet" href="assets/css/utility.css">
 </head>
-<body>
-    <header><h1>HTML Form</h1></header>
-    <div id="main">
-        <div id="main-heading"><h2>Fill up the form</h2></div>
-        <div id="main-form">
-            <form id="myForm">
-                <input type="text" name="name" id="inp-name" placeholder="Enter Your Name">
-                <input type="email" name="email" id="inp-email" placeholder="Enter Your Email">
-                <input type="number" name="age" id="inp-age" placeholder="Enter Your Age" max="100" min="18">
-                <input type="radio" name="gender" id="male" class="radio"><label for="male">Male</label>
-                <input type="radio" name="gender" id="female" class="radio">
-                <label for="female">Female</label>
-                <label for="country">Select country</label>
-                <select name="country" id="country">
-                    <option value="india">India</option>
-                    <option value="pakistan">Pakistan</option>
-                    <option value="sri-lanka">Sri Lanka</option>
-                    <option value="bangladesh">Bangladesh</option>
-                    <option value="nepal">Nepal</option>
-                </select>
-                <input type="checkbox" name="subscribe" id="chkbox">
-                <label for="chkbox">Subscribe to Newsletter</label>
-                <input type="text" name="comments" id="cmmnts">
-                <label for="cmmnts">Comments</label>
-                <button id="submit">Submit</button>
-            </form>
-        </div>
-        <div id="box1"></div>
-        <div id="box2"></div>
+<style>
+    * {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    #cont {
+        width: 50%;
+    }
+
+    #heading {
+        margin: 15px 0;
+    }
+</style>
+
+<body class="grey-bg flex justify-center align-center full-height">
+    <div id="cont" class="flex justify-center align-center flex-col border rounded">
+
+
+        <h2 id="heading">User Information Form</h2>
+        <form id="userForm">
+            <!-- Name Field -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" ><br><br>
+
+            <!-- Email Field -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" 
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br><br>
+
+            <!-- Age Field -->
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="18" max="100" ><br><br>
+
+            <!-- Gender Field -->
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male" > Male
+            <input type="radio" id="female" name="gender" value="Female"> Female
+            <input type="radio" id="other" name="gender" value="Other"> Other<br><br>
+
+            <!-- Country Field -->
+            <label for="country">Country:</label>
+            <select id="country" name="country" >
+                <option value="" disabled selected>Select your country</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="India">India</option>
+                <option value="Australia">Australia</option>
+                <!-- Add more countries as needed -->
+            </select><br><br>
+
+            <!-- Newsletter Subscription -->
+            <label for="newsletter">Subscribe to Newsletter:</label>
+            <input type="checkbox" id="newsletter" name="newsletter"><br><br>
+
+            <label>Your Favourite food:</label><br><br>
+            <label for="apple">Apple</label>
+            <input type="checkbox" id="apple" name="apple"><br><br>
+            <label for="banana">Banana</label>
+            <input type="checkbox" id="banana" name="banana"><br><br>
+            <label>Mango</label>
+            <input type="checkbox" id="mango" name="mango"><br><br>
+
+            <!-- Comments Field -->
+            <label for="comments">Comments:</label><br>
+            <textarea id="comments" name="comments" rows="4" cols="50"
+                placeholder="Your comments..."></textarea><br><br>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Placeholder for displaying error messages -->
+        <div id="errorMessages"></div>
+
+        <!-- Placeholder for displaying submitted data -->
+        <div id="result"></div>
     </div>
+
+    <!-- Link to JavaScript file -->
+    <script>
+        // Select the form element
+        const form = document.getElementById('userForm');
+
+        // Add an event listener for form submission
+        form.addEventListener('submit', function (event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+
+            // Initialize a flag and an array to store error messages
+            let isValid = true;
+            let errorMessages = [];
+
+            // Clear any previous error messages
+            const errorDiv = document.getElementById('errorMessages');
+            errorDiv.innerHTML = '';
+
+            // Get form data
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const age = document.getElementById('age').value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const country = document.getElementById('country').value;
+            const mango = document.getElementById('mango').checked;
+            const apple = document.getElementById('apple').checked;
+            const banana = document.getElementById('banana').checked;
+
+            // Validate Name
+            if (!name) {
+                isValid = false;
+                errorMessages.push("Name is required.");
+                alert("Fuck you");
+            }
+
+            // Validate Email
+            const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+            if (!email || !emailPattern.test(email)) {
+                isValid = false;
+                errorMessages.push("Valid email is required.");
+                alert("Valid email is required.");
+            }
+
+            // Validate Age
+            if (!age || age < 18 || age > 100) {
+                isValid = false;
+                errorMessages.push("Age must be between 18 and 100.");
+                alert("Age must be between 18 and 100.");
+            }
+
+            // Validate Gender
+            if (!gender) {
+                isValid = false;
+                errorMessages.push("Please select a gender.");
+                alert("Please select a gender.");
+            }
+
+            // Validate Country
+            if (!country) {
+                isValid = false;
+                errorMessages.push("Please select a country.");
+                alert("Please select a country.");
+            }
+
+            if (!(apple || banana || mango)) {
+                isValid = false;
+                errorMessages.push("Please select your favourite food");
+                alert("Please select your favourite food");
+            }
+
+
+            // If the form is valid, display the submitted data
+            if (isValid) {
+                const newsletter = document.getElementById('newsletter').checked ? 'Yes' : 'No';
+                const comments = document.getElementById('comments').value.trim();
+
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = `
+            <h3>Submitted Information</h3>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Age:</strong> ${age}</p>
+            <p><strong>Gender:</strong> ${gender.value}</p>
+            <p><strong>Country:</strong> ${country}</p>
+            <p><strong>Subscribed to Newsletter:</strong> ${newsletter}</p>
+            <p><strong>Comments:</strong> ${comments}</p>
+        `;
+            } else {
+                // If the form is not valid, display error messages
+                errorMessages.forEach(error => {
+                    const p = document.createElement('p');
+                    p.style.color = 'red';
+                    p.textContent = error;
+                    errorDiv.appendChild(p);
+                });
+            }
+        });
+
+    </script>
 </body>
-<script>
-    const form = document.getElementById("myForm");
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById("inp-name").value;
-        const email = document.getElementById("inp-email").value;
-        const age = document.getElementById("inp-age").value;
-        const country = document.getElementById("country").value;
-        const subscribe = document.getElementById("chkbox").checked;
-        const comments = document.getElementById("cmmnts").value;
-
-        if (name === "") {
-            alert("Please enter your name");
-            return;
-        }
-
-        if (email === "") {
-            alert("Please enter your email");
-            return;
-        }
-
-        if (age === "") {
-            alert("Please enter your age");
-            return;
-        }
-
-        if (country === "") {
-            alert("Please select a country");
-            return;
-        }
-
-        if (comments === "") {
-            alert("Please enter your comments");
-            return;
-        }
-
-        
-        
-        document.getElementById("box1").innerHTML = "Form submitted with data: <br>" + "Name: " + name + "<br>" + "Email: " + email + "<br>" + "Age: " + age + "<br>" + "Country: " + country + "<br>" + "Subscribe: " + subscribe + "<br>" +
-  "Comments: " + comments;
-    });
-</script>
 </html>
