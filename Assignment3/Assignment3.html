@@ -3,65 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 2 - JavaScript and DOM Manipulation</title>
-    <link rel="stylesheet" href="Assignment2.css">
+    <title>JavaScript DOM Manipulation Assignment</title>
+    <link rel="stylesheet" href="Assignment3.css">
 </head>
 <body>
-
-    <h1 id="mainHeading">User Information Form</h1>
-
-    <form id="userForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required minlength="3"><br><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required min="18" max="100"><br><br>
-
-        <label>Gender:</label>
-        <input type="radio" id="male" name="gender" value="Male" required>
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="Female">
-        <label for="female">Female</label>
-        <input type="radio" id="other" name="gender" value="Other">
-        <label for="other">Other</label><br><br>
-
-        <label for="country">Country:</label>
-        <select id="country" name="country">
-            <option value="USA">USA</option>
-            <option value="Canada">Canada</option>
-            <option value="India">India</option>
-        </select><br><br>
-
-        <label>Favorite Fruits:</label><br>
-        <input type="checkbox" id="apple" name="fruits" value="Apple">
-        <label for="apple">Apple</label>
-        <input type="checkbox" id="banana" name="fruits" value="Banana">
-        <label for="banana">Banana</label>
-        <input type="checkbox" id="mango" name="fruits" value="Mango">
-        <label for="mango">Mango</label><br><br>
-
-        <label for="comments">Comments:</label><br>
-        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
-
-        <button type="submit" id="submitButton">Submit</button>
-        <button type="button" id="resetButton">Reset</button>
-    </form>
-
-    <div class="results" id="resultsSection">
-        <h3>Submitted Information:</h3>
-        <p id="resultName"></p>
-        <p id="resultEmail"></p>
-        <p id="resultAge"></p>
-        <p id="resultGender"></p>
-        <p id="resultCountry"></p>
-        <p id="resultFruits"></p>
-        <p id="resultComments"></p>
+    <h1 id="headerTitle">Welcome to the Page</h1>
+    <div id="contentArea">
+        <p class="description">This is a brief description of the content on this page.</p>
+        <p class="description">Another description paragraph.</p>
     </div>
+    <input type="text" name="username" id="usernameInput" placeholder="Enter your username">
+    <button id="submitButton">Submit</button>
+    <button id="toggleButton">Toggle Content Area</button>
+    <br><br>
+    <a id="myLink" href="">Click me</a>
+    <p id="outputArea"></p>
 
-    <script src="Assignment2.js"></script>
-
+    <script src="Assignment3.js"></script>
 </body>
 </html>
