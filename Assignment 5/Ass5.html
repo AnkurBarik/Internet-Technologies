@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 5</title>
     <link rel="stylesheet" href="Ass5.css">
 </head>
-<body>
-    <div id="element1">Assignment 5</div>
-    <button onclick="toggleVisibility('element1')">Toggle Visibility</button>
-    <button onclick="slideElement('element1')">Slide</button>
-    <button onclick="fadeElement('element1')">Fade</button>
-    <button onclick="deleteElement('element1')">Delete</button>
 
+<body>
+    <div id="cont">
+        <div id="element1">Assignment 5</div>
+        <div id="bttns">
+            <button onclick="toggleVisibility('element1')">Toggle Visibility</button>
+            <button onclick="slideElementX('element1')">Slide Side by Side</button>
+            <button onclick="slideElementY('element1')">Slide Up & Down</button>
+            <button onclick="fadeElement('element1')">Fade</button>
+            <button onclick="deleteElement('element1')">Delete</button>
+        </div>
+    </div>
     <script src="Ass5.js"></script>
 </body>
+
 </html>

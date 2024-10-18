@@ -7,14 +7,24 @@ function toggleVisibility(id) {
     }
 }
 
-function slideElement(id) {
+function slideElementX(id) {
     const element = document.getElementById(id);
     if (element.style.transform === 'translateX(100px)') {
         element.style.transform = 'translateX(0)';
     } else {
         element.style.transform = 'translateX(100px)';
     }
-    element.style.transition = 'transform 0.5s ease';
+    element.style.transition = 'transform 0.5s ease-in';
+}
+
+function slideElementY(id) {
+    const element = document.getElementById(id);
+    if (element.style.transform === 'translateY(-100px)') {
+        element.style.transform = 'translateY(0)';
+    } else {
+        element.style.transform = 'translateY(-100px)';
+    }
+    element.style.transition = 'transform 0.5s ease-in';
 }
 
 function fadeElement(id) {
