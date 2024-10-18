@@ -14,7 +14,7 @@ function slideElementX(id) {
     } else {
         element.style.transform = 'translateX(100px)';
     }
-    element.style.transition = 'transform 0.5s ease-in';
+    element.style.transition = 'transform 1s ease-in-out';
 }
 
 function slideElementY(id) {
@@ -24,7 +24,7 @@ function slideElementY(id) {
     } else {
         element.style.transform = 'translateY(-100px)';
     }
-    element.style.transition = 'transform 0.5s ease-in';
+    element.style.transition = 'transform 1s ease-in-out';
 }
 
 function fadeElement(id) {
@@ -34,12 +34,12 @@ function fadeElement(id) {
     } else {
         element.style.opacity = '0';
     }
-    element.style.transition = 'opacity 0.5s ease';
+    element.style.transition = 'opacity 1s ease';
 }
 
 function deleteElement(id) {
     const element = document.getElementById(id);
-    element.style.transition = 'opacity 0.5s ease';
+    element.style.transition = 'opacity 1s ease';
     element.style.opacity = '0';
     setTimeout(() => { element.remove(); }, 500);
 }
