@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#elements{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.elements{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    margin: 20px;
+}
+
+#square{
+    background-color: blue;
+}
+
+#circle{
+    background-color: green;
+    border-radius: 50%;
+}
+
+#buttons button{
+    background-color: rgb(85, 85, 85);
+    color: aliceblue;
+    outline: none;
+    scale: 1.5;
+    margin: 20px;
+}
