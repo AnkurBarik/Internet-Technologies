@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","sourcesContent":[],"file":"assignment7.dev.js"}
+{"version":3,"sources":["assignment7.js"],"names":["$","document","ready","click","slideToggle"],"mappings":";;AAAAA,CAAC,CAACC,QAAD,CAAD,CAAYC,KAAZ,CAAkB,YAAY;AAC1BF,EAAAA,CAAC,CAAC,SAAD,CAAD,CAAaG,KAAb,CAAmB,YAAY;AAC3BH,IAAAA,CAAC,CAAC,gBAAD,CAAD,CAAoBI,WAApB;AACH,GAFD;AAGH,CAJD","sourcesContent":["$(document).ready(function () {\r\n    $(\"#toggle\").click(function () {\r\n        $(\"#toggleElement\").slideToggle();\r\n    });\r\n});"],"file":"assignment7.dev.js"}

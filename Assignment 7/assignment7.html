@@ -7,27 +7,22 @@
     <title>Assignment 7</title>
     <link rel="stylesheet" href="assignment7.css">
     <link rel="stylesheet" href="utility.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div id="main-cont" class="full-height flex flex-col justify-center align-center">
         <div id="btn" class="flex justify-center align-center">
-            <button id="toggle" class="transparent">TOGGLE</button>
+            <button type="button" id="toggle" class="transparent">TOGGLE</button>
         </div>
-        <div class="text" class="flex justify-center align-center">
+        <div id="toggleElement" class="text flex justify-center align-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nostrum sed id, consectetur quaerat
             cumque modi in provident repellat voluptate tenetur velit nemo fuga officiis itaque veniam rem. Dolorem,
             eveniet!
         </div>
     </div>
-    <!-- <script src="assignment7.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous">
-        $(document).ready(function(){
-    $("#toggle").click(function(){
-        $("#toggleElement").slideToggle();
-    });
-});
-    </script>
+    <script src="assignment7.js"></script>
 </body>
 
 </html>

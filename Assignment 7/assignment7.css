@@ -1,5 +1,10 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+}
+#btn{
+    position:fixed;
+    top: 200px;
 }
 #btn button{
     margin: 10px;
