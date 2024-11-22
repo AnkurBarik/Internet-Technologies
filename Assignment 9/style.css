@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
