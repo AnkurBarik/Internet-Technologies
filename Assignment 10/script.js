@@ -11,7 +11,7 @@ $(document).ready(function() {
                 left: '0%',
                 top: '0%',
                 transform: 'translate(200px, 200px)',
-                backgroundColor: 'blue',
+                backgroundColor: '#6464ff',
                 transition: '1s ease'
             });
             isCentered = true;
