@@ -1,0 +1,11 @@
+#box {
+    height: 150px;
+    width: 150px;
+    background-color: crimson !important;
+    margin: 20px;
+    transition: transform 1s ease-in-out;
+}
+
+#btn {
+    margin: 20px;
+}
